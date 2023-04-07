@@ -26,7 +26,7 @@ char    *ft_free_join(char *resto, char *buffer)
 char    *ft_read_file(int fd, char *resto)
 {
     char    *buffer;
-    int     *c_read;
+    int     c_read;
 
     if (!resto)
         resto = calloc(1,1);
@@ -37,22 +37,42 @@ char    *ft_read_file(int fd, char *resto)
     while (c_read > 0)
     {
         c_read = read(fd, buffer, BUFFER_SIZE);
-        if (c_read = -1)
+        if (c_read == -1)
         {
             free(buffer);
             return (NULL);
         }
         resto = ft_free_join(resto, buffer);
         if (ft_strchr(buffer, '\n'))
-            return ;
+            c_read = 0;
     }
     free (buffer);
     return (resto);
 }
 
-char    *ft_line(char *ln, char *resto)
+char    *ft_update_lines(char *buffer)
 {
-    int i;
+    int     i;
+    int     j;
+    char    *line;
+
+    i = 0;
+    j = 0;
+    while (buffer[i] && buffer[i] != '\n')
+        i++;
+    line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
+    i++;
+    while (buffer[i])
+        line[i++] = buffer[j++];
+    free(buffer);
+    return (line);
+
+}
+
+char    *ft_line(char *resto)
+{
+    int     i;
+    char    *ln;
 
     i = 0;
     while (resto[i++] != '\0'); 
@@ -65,8 +85,8 @@ char    *ft_line(char *ln, char *resto)
         ln[i] = resto[i];
         i++;
     }
-    if (resto[i] && resto[i] == '/n')
-        ln[i++] = '/n';
+    if (resto[i] && resto[i] == '\n')
+        ln[i++] = '\n';
     return (ln);
 }
 
@@ -81,4 +101,6 @@ char    *get_next_line(int fd)
     if (!resto)
         return (NULL);
     ln = ft_line(resto);
+    resto = ft_update_lines(resto);
+    return (ln);
 }
