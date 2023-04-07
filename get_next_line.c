@@ -13,12 +13,13 @@
 #include "get_next_line.h"
 
 
-char    *ft_free_join(char *resto, char *buffer)
+char *ft_free_join(char *resto, char *buffer)
 {
-    char    *tmp;
+    char *tmp;
     
-    resto = ft_strjoin(resto, buffer);
-    tmp = resto;
+    if (!resto)
+        resto = ft_calloc(1, 1);
+    tmp = ft_strjoin(resto, buffer);
     free(resto);
     return (tmp);
 }
