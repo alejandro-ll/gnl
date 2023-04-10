@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: allera-m <allera-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:54:49 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/06 12:54:49 by marvin           ###   ########.fr       */
+/*   Updated: 2023/04/10 16:01:32 by allera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <fcntl.h>
 
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 42
