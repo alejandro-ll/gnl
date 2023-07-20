@@ -6,7 +6,7 @@
 /*   By: allera-m <allera-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:50:48 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/17 02:35:04 by allera-m         ###   ########.fr       */
+/*   Updated: 2023/05/06 11:31:01 by allera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,17 +128,16 @@ char    *get_next_line(int fd)
     //printf("VALOR----> RESTO\n%s\n", resto);
     return (ln);
 }
-
-
-/*int main(void)
+/*
+int main(void)
 {
     int fd;
     char *line;
 
-    fd = open("test.txt", O_RDONLY);
+    fd = open("read_error.txt", O_RDONLY);
     if (fd == -1)
     {
-        printf("Error opening file %s\n", "text.txt");
+        printf("Error opening file %s\n", "read_error.txt");
         return (1);
     }
     while ((line = get_next_line(fd)))
@@ -147,12 +146,6 @@ char    *get_next_line(int fd)
         free(line);
     }
     printf("EN CONSOLA--->%s\n", line);
-    system("leaks a.out"); 
-    printf("EN CONSOLA--->%s\n", get_next_line(fd));
-    printf("EN CONSOLA--->%s\n", get_next_line(fd));
-    printf("EN CONSOLA--->%s\n", get_next_line(fd));
-    printf("EN CONSOLA--->%s\n", get_next_line(fd));
-    printf("EN CONSOLA--->%s\n", get_next_line(fd));
     close(fd);
     return (0);
 }*/
