@@ -6,7 +6,7 @@
 /*   By: allera-m <allera-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:54:49 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/17 02:28:30 by allera-m         ###   ########.fr       */
+/*   Updated: 2023/07/27 19:51:37 by allera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <fcntl.h>
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
+# define BUFFER_SIZE 23
 #endif
 
 char	*get_next_line(int fd);
